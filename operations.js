@@ -14,10 +14,17 @@
 // let str3=str1+str2;
 // console.log(str3);  //hello suchitra
 
-console.log("1"+2);     //12
-console.log(1+"2");     //12
-console.log("1" +"2");  //12
-console.log("1"+2+2);   //122
-console.log(1+2+"2");   //32
+// console.log("1"+2);     //12
+// console.log(1+"2");     //12
+// console.log("1" +"2");  //12
+// console.log("1"+2+2);   //122
+// console.log(1+2+"2");   //32
 
-let
+console.log("2"*4);   //8
+console.log("6"/2);   //3
+console.log("6"-2); //4
+console.log("6"%4); //2 
+console.log("6"**2); //36
+console.log("hello"*2); //NaN
+console.log("hello"/2); //NaN
+
