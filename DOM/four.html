@@ -25,5 +25,24 @@
        document.querySelector('.language').appendChild(li)
     }
     addOptiLanguage("golang")
+    //it is optimized way as we have to create  a li and add a textNode then append it
+
+    //Edit
+    const secLang=document.querySelector("li:nth-child(2)")
+    //secLang.innerHTML="Mojo" used but not optimized way
+   const newLi= document.createElement('li')
+   newLi.textContent="mojo"
+   secLang.replaceWith(newLi)
+
+
+   //edit
+   const firstLang=document.querySelector("li:first-child")
+   firstLang.outerHTML="<li>golang</li>"
+
+   //remove
+   const lastlanguage=document.querySelector('li:last-child')
+   lastlanguage.remove()
+
+
 </script>
 </html>
