@@ -53,9 +53,8 @@ function validateGuess(guess){
       checkGuess(guess);
     }
   }
-1
 };
-function checkGuess(){
+function checkGuess(guess){
   //check random no is high low or equal
   if(guess===randomNo){
     displayMsg(`Wow! you guessed it right`);
@@ -69,7 +68,7 @@ function checkGuess(){
   }
 };
 
-function displayGuess(){
+function displayGuess(guess){
 userInput.value='';
 guessSlot.innerHTML +=`${guess},      `;
 numGuess++;
@@ -92,7 +91,7 @@ function endGame(){
   newGame();
 }
 function newGame(){
-const newGameButtton=document.querySelector('#newGame');
+const newGameButtton=document.querySelector('#newgame');
 newGameButtton.addEventListener('click',function(e){
       randomNo=parseInt(Math.random()*100+1);
     prevGuess=[];
