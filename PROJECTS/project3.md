@@ -4,7 +4,7 @@
 
 # solution code
 
-## project 2
+## project 3
 
 ```javascript
 const clock=document.getElementById('clock');
