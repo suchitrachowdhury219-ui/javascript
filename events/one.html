@@ -5,30 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html events</title>
 </head>
-<body style="background-color: lightcoral;">
+<body style="background-color: rgb(153, 167, 98);">
     <h2>Amazing images</h2>
     <div>
         <ul id="images">
             <li><img id="picture" src="https://www.w3schools.com/images/picture.jpg" alt="Image 1" width="200px"></li>
             <li><img  id="desert" src="https://img.freepik.com/free-photo/beautiful-view-tranquil-desert-clear-sky-captured-morocco_181624-8496.jpg?semt=ais_incoming&w=740&q=80" alt="Image 2" width="200px"></li>
-            <li><img id="forest" src="https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.jpg?s=612x612&w=0&k=20&c=UHeb1pGOw6ozr6utsenXHhV19vW6oiPIxDqhKCS2Llk=" alt="Image 3" width="200px" ></li>
-            <li><a style="color:rgb(2, 17, 30);" href="https://google.com" id="google">Google</a></li>
+            <li><img id="forest" src="https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.jpg?s=612x612&w=0&k=20&c=UHeb1pGOw6ozr6utsenXHhV19vW6oiPIxDqhKCS2Llk=" alt="Image 3" width="200px" ></li> <!-- onclick="alert('forest clicked')" -->
+
+            <li><a style="color:rgb(2, 17, 30);" href="https://google.com" id="google">Google</a></li> 
         </ul>
+        
     </div>
 </body>
 <script>
-    //1.document.getElementById=('desert').onclick=function(){
+    //1.document.getElementById('desert').onclick=function(){
         //alert("desert clicked");}
 
     //2.attachEvent()
-        //jQuery-on
+    //4.jQuery-on
+
+    //false->default
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keycode
+
 
      //3.u should use eventlistners coz its just not provide onclick functionality but also ability for propagation
-    document.getElementById('desert').addEventListener('click',function(e){
-            alert('desert clicked')
-    },false)
+    // document.getElementById('desert').addEventListener('click',function(e){
+    //         console.log(e);
+            
+    // },false)
+    //event propagation ->event bubbling >>>down to up(f)
+    //                 ->event capturing>>>up to bootom(t)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+    // },false)
 
+    // document.getElementById('desert').addEventListener('click',function(e){
+    //     console.log(" desert clicked ");
+    //     e.stopImmediatePropagation();
+    // },false)
 
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log('google clicked');
+    // },false)
 
+document.querySelector('#images').addEventListener('click',function(e){
+    //console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG'){
+    console.log(e.target.id);
+    let removeIt=e.target.parentNode;
+     removeIt.remove();
+    }
+},false)
+//removeIt.parentNode.removeChild(removeIt) c
 </script>
 </html>
