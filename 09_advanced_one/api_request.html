@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+0	UNSENT	                Client has been created. open() not called yet.
+1	OPENED	                open() has been called.
+2	HEADERS_RECEIVED	    send() has been called, and headers and status are available.
+3	LOADING	Downloading;    responseText holds partial data.
+4	DONE	                The operation is complete.
+
+    <button id="btn">Get Data</button>
+<div id="card">
+
+</div>
+</body>
+<script>
+    document.getElementById('btn').addEventListener('click',function(){
+    
+
+    const requestUrl='https://api.github.com/users/hiteshchoudhary';
+   const xhr= new  XMLHttpRequest();    //XMLHttpRequest =>calls the api to get response data
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange=function (){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            //const data=this.responseText;
+            //most of the time data is in string format so we need to convert it into json format(object)
+            const data=JSON.parse(this.responseText);
+            //console.log(typeof data);
+            console.log(data.followers);
+            console.log(data.avatar_url); 
+            //making a card using the data we get from the api
+   const card= document.createElement("div");
+   const img=document.createElement("img");
+   img.src=data.avatar_url;
+
+   const followers=document.createElement('p');
+   followers.innerText="Followers: "+data.followers;
+
+   card.appendChild(img);
+   card.appendChild(followers);
+   document.body.appendChild(card);           
+        }
+}
+   xhr.send(); 
+    });
+</script>
+</html>
