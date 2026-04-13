@@ -88,8 +88,30 @@ async function consumepromise5(){   //async function is a function that returns 
     }catch(error){
         console.log(error);
         
-    }
-} 
-
+    }}
 consumepromise5();
+// async function getAllUser(){
+//    try{
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users")
+//    const data=await response.json()
+//    console.log(data);
+//    } catch(error){
+//     console.log("E: ",error);
+    
+//    }
    
+// }   
+// getAllUser();
+
+fetch('https://api.github.com/users/hiteshchoudhary')
+.then((response)=>{
+    return response.json();
+})
+.then((data6=>{
+    console.log(data);
+    
+}))
+.catch((error6=>{
+    console.log(error);
+    
+}))
