@@ -44,6 +44,7 @@ resolve({username:"suchitra",email:"suchitr34@gmail.com"})
 
    const promise4=new Promise(function(resolve,reject){
     setTimeout(function(){
+        let error=true;
             if(!error){
                 resolve({username:"suchita", password:"1245"})
             }
@@ -52,18 +53,43 @@ resolve({username:"suchitra",email:"suchitr34@gmail.com"})
             }
     },1000)
    })
-   promise4.then((user)=>{
+   promise4
+   .then((user)=>{
     console.log(user);
     return user.username;
-   }).then((usernam)=>{
-console.log(usernam);
-
-   }).catch(function(error){
-    console.log("error");
-    
    })
-  
+   .then((usernam)=>{
+console.log(usernam);
+   })
+   .catch(function(error){
    
+    console.log(error);
+   }).finally(()=>{
+    console.log("The Promise is either resolved or rejected");//whether resolved or rejected this will be executed 
+   })
+  //finally is used to execute code after the promise is settled, regardless of whether it was resolved or rejected. It is often used for cleanup tasks or to perform actions that should happen after the promise has completed, regardless of the outcome.
    
 
+  promise5=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=true;
+        if(!error){
+            resolve({username:"suchitra", password:"1245"})
+  }
+else{
+    reject('ERROR: JS went wrong')
+}
+    },1000)
+})
+async function consumepromise5(){   //async function is a function that returns a promise and allows you to use the await keyword inside it to wait for the resolution of promises. but we have to use try catch block to handle error in async await
+    try{
+    const response= await promise5
+    console.log(response);
+    }catch(error){
+        console.log(error);
+        
+    }
+} 
+
+consumepromise5();
    
