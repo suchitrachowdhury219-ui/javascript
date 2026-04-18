@@ -1,5 +1,5 @@
 # javascript and classes
-
+-js is a prototype based language
 
 ##OOP
 
