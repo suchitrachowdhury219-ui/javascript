@@ -11,6 +11,8 @@
 object literal
 
 -constructor function
+            --creates instances/objects
+            --
 -prototypes
 -classes
 -Instances(new,this)
