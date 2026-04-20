@@ -36,6 +36,7 @@ const user2= new User("Suchitra",10,false);     //if we don't use new keyword th
 console.log(user1);     //User { username: 'hitesh', loginCount: 12, isLoggedIn: true }
 console.log(user2);     //User { username: 'Suchitra', loginCount: 10, isLoggedIn: false }
 
-//instanceof
+//instanceof shows the constructor function used to create the object
+console.log(user1 instanceof User); 
 
 
