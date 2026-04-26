@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button >Button click</button>
+</body>
+<script>
+        class React {
+            constructor() {
+                this.library = "React";
+                this.server="http://localhost:300";
+                //reqiurement of bind is to bind the this keyword to the function
+             //bind is used to bind the this keyword to the function so that it can access the properties of the class
+                this.button = document.querySelector("button");
+                this.button.addEventListener("click", this.handleClick.bind(this));   
+            }
+        }
+
+
+
+</script>
+
+</html>
