@@ -15,11 +15,21 @@
                 this.server="http://localhost:300";
                 //reqiurement of bind is to bind the this keyword to the function
              //bind is used to bind the this keyword to the function so that it can access the properties of the class
-                this.button = document.querySelector("button");
-                this.button.addEventListener("click", this.handleClick.bind(this));   
+
+             //reqirement
+                document
+                        .querySelector('button')
+                        .addEventListener('click',this.handleClick.bind(this))
+
+            }
+            handleClick(){
+                console.log("button clicked");
+                console.log(this);
+                
+                
             }
         }
-
+const app=new React()
 
 
 </script>
