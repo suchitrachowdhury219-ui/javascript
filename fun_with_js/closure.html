@@ -9,14 +9,33 @@
     
 </body>
 <script>
-        function init(){
-            let name="Mozilla";     //name is local variable declaared by init
-            function displayName(){     //displayName is the inner function
-                console.log(name);      //use variable declaredd in the parent function
+        // function init(){
+        //     let name="Mozilla";     //name is local variable declaared by init
+        //     function displayName(){     //displayName is the inner function
+        //         console.log(name);      //use variable declaredd in the parent function
+        //     }
+        //     displayName();
+        // }
+        // init();
+
+
+        function outer(){
+            let username="suchitra"
+            console.log(secret);
+            function inner(){
+                let secret="my123"
+                console.log("inner",username);
             }
-            displayName();
+        function innertwo(){
+            console.log(secret);          
+            console.log("innertwo",username);
         }
-        init();
+        inner();
+        innertwo();
+        }
+        outer();
+        console.log("too outer",username);
+        
 
 </script>
 </html>
