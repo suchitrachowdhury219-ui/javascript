@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closure aur chai</title>
 </head>
+
 <body style="background-color: bisque;">
-    
+    <button id="orange">Orange</button>
+    <button id="green">green</button>
 </body>
 <script>
         // function init(){
@@ -19,23 +21,52 @@
         // init();
 
 
-        function outer(){
-            let username="suchitra"
-            console.log(secret);
-            function inner(){
-                let secret="my123"
-                console.log("inner",username);
-            }
-        function innertwo(){
-            console.log(secret);          
-            console.log("innertwo",username);
-        }
-        inner();
-        innertwo();
-        }
-        outer();
-        console.log("too outer",username);
+        // function outer(){
+        //     let username="suchitra"
+        //     console.log(secret);
+        //     function inner(){
+        //         let secret="my123"
+        //         console.log("inner",username);
+        //     }
+        // function innertwo(){
+        //     console.log(secret);          
+        //     console.log("innertwo",username);
+        // }
+        // inner();
+        // innertwo();
+        // }
+        // outer();
+        // console.log("too outer",username);
         
 
+        // function makeFunc(){
+        //     let name="Mozilla";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     return displayName;
+        // }
+
+        // const myfunc=makeFunc();
+        // myfunc;
+</script>
+<script>
+    //    document.getElementById('orange').onclick=function(){
+    //     document.body.style.backgroundColor="orange"
+    //    }
+    //    document.getElementById('green').onclick=function(){
+    //     document.body.style.backgroundColor="green"
+    //    }
+
+    function clickHandler(color){
+       // document.body.style.backgroundColor=`${color}`
+        return function(){
+        document.body.style.backgroundColor=`${color}`
+       }
+    }
+    document.getElementById('orange').onclick=clickHandler("orange");
+    document.getElementById('green').onclick=clickHandler("green");
+      //this is happening because of lexical scoping (a function can access variables from its outer/parent scope)
+      //closure is created when a function remembers its lexical scope even after the outer function has finished executing
 </script>
 </html>
